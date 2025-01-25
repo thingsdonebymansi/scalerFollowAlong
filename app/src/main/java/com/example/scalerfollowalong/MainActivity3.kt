@@ -34,13 +34,13 @@ class MainActivity3 : AppCompatActivity() {
             var idCurrentImage = "pic$currentImage"
 
             // i have to get the integer address associated with each view
-            var idCurrentImageInt = resources.getIdentifier(idCurrentImage, "id", packageName)
+            var idCurrentImageInt = this.resources.getIdentifier(idCurrentImage, "id", this.packageName)
             image = findViewById(idCurrentImageInt)
             image.alpha = 0f
 
             currentImage = (4 + currentImage + 1) % 4
             var idNextImage = "pic$currentImage"
-            var idNextImageInt = resources.getIdentifier(idNextImage, "id", packageName)
+            var idNextImageInt = this.resources.getIdentifier(idNextImage, "id", this.packageName)
             image = findViewById(idNextImageInt)
             image.alpha = 1f
 
@@ -52,13 +52,13 @@ class MainActivity3 : AppCompatActivity() {
             var idCurrentImage = "pic$currentImage"
 
             // i have to get the integer address associated with each view
-            var idCurrentImageInt = resources.getIdentifier(idCurrentImage, "id", packageName)
+            var idCurrentImageInt = this.resources.getIdentifier(idCurrentImage, "id", this.packageName)
             image = findViewById(idCurrentImageInt)
             image.alpha = 0f
 
             currentImage = (4 + currentImage - 1) % 4
             var idPrevImage = "pic$currentImage"
-            var idPrevImageInt = resources.getIdentifier(idPrevImage, "id", packageName)
+            var idPrevImageInt = this.resources.getIdentifier(idPrevImage, "id", this.packageName)
             image = findViewById(idPrevImageInt)
             image.alpha = 1f
 
