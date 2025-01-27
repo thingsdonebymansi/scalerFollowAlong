@@ -45,4 +45,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    // Add converter if needed (e.g., Gson)
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+
+
 }
