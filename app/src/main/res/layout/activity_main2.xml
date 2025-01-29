@@ -11,12 +11,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:orientation="horizontal">
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:id="@+id/etFirstName"
             android:fontFamily="monospace"
             android:hint="First name"
             android:textSize="24sp" />
@@ -24,6 +26,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/etLastName"
             android:layout_weight="1"
             android:fontFamily="monospace"
             android:hint="Last name"
@@ -31,14 +34,18 @@
 
     </LinearLayout>
 
+
     <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="monospace"
         android:hint="Email"
-        android:layout_marginTop="20dp"
         android:minHeight="48dp"
         android:textSize="24sp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,6 +56,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/etPassword"
             android:layout_weight="1"
             android:fontFamily="monospace"
             android:hint="Password"
@@ -57,6 +65,7 @@
 
         <Button
             android:layout_width="wrap_content"
+            android:id="@+id/btnAct2"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="monospace"
