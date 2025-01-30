@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">scalerFollowAlong</string>
+    <string name="tVAct7Text">Let us count numbers: 0</string>
+    <string name="btnAct07">Count</string>
 </resources>

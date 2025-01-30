@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AE303F9F"
+    tools:context=".MainActivity7">
+
+    <TextView
+        android:id="@+id/tVAct7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150dp"
+        android:fontFamily="@font/audiowide"
+        android:text="@string/tVAct7Text"
+        android:textColor="#E3F2FD"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAct7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="99dp"
+        android:layout_marginBottom="278dp"
+        android:backgroundTint="#900C0C0C"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/btnAct07"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVAct7" />
+</androidx.constraintlayout.widget.ConstraintLayout>
