@@ -2,7 +2,9 @@ package com.example.scalerfollowalong
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,6 +31,19 @@ class MainActivity : AppCompatActivity() {
         buttonHot.setOnClickListener {
             linearLayout.setBackgroundColor(getColor(R.color.red))
             //Toast.makeText(this, "Hot", Toast.LENGTH_SHORT).show()
+        }
+
+        val btnAddition = findViewById<Button>(R.id.btnAddition)
+        var ptFirstNumber = findViewById<EditText>(R.id.ptFirstNumber)
+        var ptSecondNumber = findViewById<EditText>(R.id.ptSecondNumber)
+        var tVResult = findViewById<TextView>(R.id.tVResult)
+
+        btnAddition.setOnClickListener {
+            val FirstNumber = ptFirstNumber.text.toString().toInt()
+            val SecondNumber = ptSecondNumber.text.toString().toInt()
+            val result = FirstNumber + SecondNumber
+            tVResult.text = result.toString()
+
         }
     }
 }

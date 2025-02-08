@@ -32,10 +32,10 @@
             android:name=".MainActivity6"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity7"
             android:exported="false" />
         <activity
-            android:name=".MainActivity7"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

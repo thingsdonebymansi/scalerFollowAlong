@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main7"
     android:layout_width="match_parent"
@@ -7,15 +8,85 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+        <EditText
+            android:id="@+id/ptFirstNumber"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="92dp"
+            android:fontFamily="@font/slackey"
+            android:inputType="number"
+            android:hint="@string/ptFirstNumberHint"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ptSecondNumber"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/slackey"
+            android:inputType="number"
+            android:hint="@string/ptSecondNumberHint"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnAddition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="82dp"
+            android:layout_marginBottom="92dp"
+            android:fontFamily="@font/slackey"
+            android:text="@string/btnAddition"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ptFirstNumber" />
+
+        <TextView
+            android:id="@+id/tVResult"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="72dp"
+            android:layout_marginBottom="92dp"
+            android:fontFamily="@font/slackey"
+            android:textSize="20sp"
+            android:text="Result"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ptSecondNumber" />
+
+        <TextView
+            android:id="@+id/tVColorChange"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/audiowide"
+            android:text="@string/tVChangeColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btnCool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="240dp"
-        android:text="Cool" />
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:text="Cool"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btnHot"
@@ -23,5 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="Hot" />
+        android:fontFamily="@font/audiowide"
+        android:text="Hot"
+        android:textSize="20sp" />
 </LinearLayout>

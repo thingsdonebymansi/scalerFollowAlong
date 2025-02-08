@@ -2,4 +2,8 @@
     <string name="app_name">scalerFollowAlong</string>
     <string name="tVAct7Text">Let us count numbers: 0</string>
     <string name="btnAct07">Count</string>
+    <string name="btnAddition">Add</string>
+    <string name="ptFirstNumberHint">First number</string>
+    <string name="ptSecondNumberHint">Second number</string>
+    <string name="tVChangeColor">Press below buttons to change color</string>
 </resources>
