@@ -59,6 +59,10 @@ class MainActivity2 : AppCompatActivity() {
 
         }
 
+        binding.btnAddImage.setOnClickListener{
+            binding.ivImage.setImageResource(R.drawable.howl)
+        }
+
 
     }
 }
