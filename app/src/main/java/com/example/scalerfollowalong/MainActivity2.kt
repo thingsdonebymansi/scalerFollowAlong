@@ -1,3 +1,4 @@
+/*
 package com.example.scalerfollowalong
 
 import android.app.Activity
@@ -158,4 +159,77 @@ class MainActivity2 : AppCompatActivity() {
     }
 
 
+}*/
+
+ */
+
+
+
+ package com.example.scalerfollowalong
+
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
+import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
+import android.util.Patterns
+import android.widget.Toast
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.example.scalerfollowalong.databinding.ActivityMain2Binding
+
+class MainActivity2 : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMain2Binding
+    private var selectedImageUri: Uri? = null
+    private val REQUEST_CODE_PERMISSIONS = 100
+
+    private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+        if (uri != null) {
+            Log.d("MainActivity2", "Selected URI: $uri")
+            selectedImageUri = uri
+            binding.ivImage.setImageURI(uri)
+        } else {
+            Log.d("MainActivity2", "No media selected")
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMain2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+        //setContentView(R.layout.activity_main2)
+
+        binding.btnAct2.setOnClickListener {
+            val firstName = binding.etFirstName.text.toString()
+            val lastName = binding.etLastName.text.toString()
+            val email = binding.email.text.toString()
+            val password = binding.etPassword.text.toString()
+
+            if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Please enter a valid email", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            Log.d("MainActivity2", "First Name: $firstName, Last Name: $lastName, Email: $email")
+        }
+
+        binding.btnAddImage.setOnClickListener {
+            openImagePicker()
+        }
+    }
+
+    private fun openImagePicker() {
+        Log.d("MainActivity2", "openImagePicker() called")
+        pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageAndVideo))
+    }
 }
