@@ -6,5 +6,6 @@
     <string name="ptFirstNumberHint">First number</string>
     <string name="ptSecondNumberHint">Second number</string>
     <string name="tVChangeColor">Press below buttons to change color</string>
-    <string name="btnAddImage">Add image</string>
+    <string name="btnAddImage">Add custom image</string>
+
 </resources>

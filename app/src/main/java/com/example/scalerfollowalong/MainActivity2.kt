@@ -1,10 +1,23 @@
 package com.example.scalerfollowalong
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.PackageManagerCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.scalerfollowalong.databinding.ActivityMain2Binding
@@ -13,6 +26,10 @@ class MainActivity2 : AppCompatActivity() {
 
     // Declaring the binding object
     private lateinit var binding: ActivityMain2Binding
+    private lateinit var imageView: ImageView
+    private lateinit var selectImageButton: Button
+    private lateinit var pickImageLauncher: ActivityResultLauncher<Intent>
+    private var REQUEST_CODE_PERMISSIONS = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +38,9 @@ class MainActivity2 : AppCompatActivity() {
         // Inflate the layout using the binding object
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root) // Use the root view of the binding object
+
+
+
 
         enableEdgeToEdge()
         //setContentView(R.layout.activity_main2)
@@ -59,10 +79,83 @@ class MainActivity2 : AppCompatActivity() {
 
         }
 
-        binding.btnAddImage.setOnClickListener{
-            binding.ivImage.setImageResource(R.drawable.howl)
+
+        imageView = findViewById(R.id.ivImage)
+        selectImageButton = findViewById(R.id.btnAddImage)
+
+        // Register the ActivityResultLauncher
+        pickImageLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+                result ->
+            if(result.resultCode == Activity.RESULT_OK){
+                val data: Intent? = result.data
+                if(data != null){
+                    val selectedImageUri: Uri? = data.data
+                    if(selectedImageUri != null){
+                        imageView.setImageURI(selectedImageUri)
+                    }
+                }
+            }
+        }
+
+        selectImageButton.setOnClickListener{
+            if (checkPermissions()){
+                openImagePicker()
+            } else {
+                requestPermissions()
+
+            }
         }
 
 
     }
+
+    private fun openImagePicker(){
+        val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
+            type = "image/*"
+        }
+        pickImageLauncher.launch(intent)
+
+    }
+
+    // On Android 13 (Tiramisu) and above, we need READ_MEDIA_IMAGES.
+    // On older versions, we need READ_EXTERNAL_STORAGE.
+
+    private fun checkPermissions(): Boolean{
+        val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            android.Manifest.permission.READ_MEDIA_IMAGES
+        } else {
+            android.Manifest.permission.READ_EXTERNAL_STORAGE
+
+        }
+        return ContextCompat.checkSelfPermission(this,permission) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestPermissions(){
+        val permission = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            arrayOf(android.Manifest.permission.READ_MEDIA_IMAGES)
+        } else {
+            arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+        }
+        ActivityCompat.requestPermissions(this,permission,REQUEST_CODE_PERMISSIONS)
+    }
+
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openImagePicker()
+            } else {
+                // Determine which permission was denied (if multiple were requested)
+                val deniedPermission = if (permissions.isNotEmpty()) permissions[0] else "unknown permission"
+                Toast.makeText(this, "Permission denied for $deniedPermission", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
 }
