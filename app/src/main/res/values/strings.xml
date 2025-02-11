@@ -7,5 +7,14 @@
     <string name="ptSecondNumberHint">Second number</string>
     <string name="tVChangeColor">Press below buttons to change color</string>
     <string name="btnAddImage">Add custom image</string>
+    <string name="tVQuestionAboutFoodPreferences">Tell us your food preferences:</string>
+    <string name="rBVegan">Vegan </string>
+    <string name="rBVegetarian">Vegetarian </string>
+    <string name="rBNonVegetarian">Non Vegetarian </string>
+    <string name="cBMainDishes">Main Dishes</string>
+    <string name="cBDesserts">Desserts</string>
+    <string name="cBSideDishes">Side Dishes</string>
+    <string name="cBDrinks">Drinks</string>
+    <string name="btnSubmitMyFoodPreferences">Submit</string>
 
 </resources>

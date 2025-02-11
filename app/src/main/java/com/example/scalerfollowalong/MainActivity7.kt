@@ -1,6 +1,7 @@
 package com.example.scalerfollowalong
 
 import android.os.Bundle
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,5 +30,26 @@ class MainActivity7 : AppCompatActivity() {
             binding.tVAct7.text = "Let us count numbers: $count"
             Toast.makeText(this, "Count button clicked", Toast.LENGTH_SHORT).show()
         }
+
+        binding.btnSubmitMyFoodPreferences.setOnClickListener{
+            val selectedFoodType = binding.rGFoodType.checkedRadioButtonId
+            val preferededFoodType = findViewById<RadioButton>(selectedFoodType)
+            val selectedMainDishes = binding.cBMainDishes.isChecked
+            val selectedSideDishes = binding.cBSideDishes.isChecked
+            val selectedDesserts = binding.cBDesserts.isChecked
+            val selectedDrinks = binding.cBDrinks.isChecked
+
+            val preferences = "Your food preferences are:\n" + "${preferededFoodType.text}" +
+                    (if(selectedMainDishes) "\nMain Dishes" else "") +
+                    (if(selectedSideDishes) "\nSide Dishes" else "") +
+                    (if(selectedDesserts) "\nDesserts" else "") +
+                    (if(selectedDrinks) "\nDrinks" else "")
+
+            binding.tVMyFoodPreferences.text = preferences
+
+        }
+
+
+
     }
 }
