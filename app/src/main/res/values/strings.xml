@@ -16,5 +16,8 @@
     <string name="cBSideDishes">Side Dishes</string>
     <string name="cBDrinks">Drinks</string>
     <string name="btnSubmitMyFoodPreferences">Submit</string>
+    <string name="btnNormalToast">Normal Toast</string>
+    <string name="btnCustomToast">Custom Toast</string>
+    <string name="tVCustomToast">This is a custom toast.</string>
 
 </resources>
