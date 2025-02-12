@@ -62,7 +62,7 @@
             android:fontFamily="@font/audiowide"
             android:text="@string/tVQuestionAboutFoodPreferences"
             android:textColor="@color/white"
-            android:textSize="23sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -85,7 +85,7 @@
                 android:fontFamily="@font/audiowide"
                 android:text="@string/rBVegan"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <RadioButton
                 android:id="@+id/rBVegetarian"
@@ -94,7 +94,7 @@
                 android:fontFamily="@font/audiowide"
                 android:text="@string/rBVegetarian"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <RadioButton
                 android:id="@+id/rBNonVegetarian"
@@ -103,7 +103,7 @@
                 android:fontFamily="@font/audiowide"
                 android:text="@string/rBNonVegetarian"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
         </RadioGroup>
 

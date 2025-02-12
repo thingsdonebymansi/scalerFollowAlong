@@ -34,8 +34,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="#ECE0F7FA"
-            android:tint="#AB47BC"
-            app:srcCompat="@drawable/pngtreecafe_logo_7948907" />
+            app:srcCompat="@drawable/pngtreecafe_logo_7948907"
+            app:tint="#AB47BC" />
 
         <TextView
             android:id="@+id/cafename"

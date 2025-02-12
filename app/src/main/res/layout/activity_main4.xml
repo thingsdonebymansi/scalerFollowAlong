@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main7"
+    android:id="@+id/main4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity4">
@@ -114,6 +114,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="517dp" />
+
+    <Button
+        android:id="@+id/btnNormalToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="201dp"
+        android:fontFamily="monospace"
+        android:text="@string/btnNormalToast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <Button
+        android:id="@+id/btnCustomToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="201dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="monospace"
+        android:text="@string/btnCustomToast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
