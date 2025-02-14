@@ -1,5 +1,6 @@
 package com.example.scalerfollowalong
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -28,6 +29,17 @@ class MainActivity3 : AppCompatActivity() {
         val nextButton = findViewById<ImageButton>(R.id.btnNext)
         val prevButton = findViewById<ImageButton>(R.id.btnPrev)
         val picName = findViewById<TextView>(R.id.imgName)
+        val backButton03 = findViewById<ImageButton>(R.id.ibtnBack03)
+        val nextButton03 = findViewById<ImageButton>(R.id.ibtnNext03)
+
+        backButton03.setOnClickListener {
+            finish()
+        }
+        nextButton03.setOnClickListener{
+            Intent(this, MainActivity4::class.java).also {
+                startActivity(it)
+            }
+        }
 
         nextButton.setOnClickListener {
             // i want to get the next image

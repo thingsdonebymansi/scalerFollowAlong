@@ -204,6 +204,17 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(binding.root)
         //setContentView(R.layout.activity_main2)
 
+        // back and next button code to go back to MainActivity and next to the MainActivity3
+        binding.ibtnBack02.setOnClickListener{
+            finish()
+        }
+        binding.ibtnNext02.setOnClickListener{
+            Intent(this, MainActivity3::class.java).also {
+                startActivity(it)
+            }
+
+        }
+
         binding.btnAct2.setOnClickListener {
             val firstName = binding.etFirstName.text.toString()
             val lastName = binding.etLastName.text.toString()

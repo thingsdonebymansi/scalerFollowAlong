@@ -1,6 +1,7 @@
 
 package com.example.scalerfollowalong
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -23,6 +24,17 @@ class MainActivity4 : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+
+        binding.ibtnBack04.setOnClickListener {
+            finish()
+
+        }
+        binding.ibtnNext04.setOnClickListener {
+            Intent(this, MainActivity5::class.java).also {
+                startActivity(it)
+            }
         }
 
 
