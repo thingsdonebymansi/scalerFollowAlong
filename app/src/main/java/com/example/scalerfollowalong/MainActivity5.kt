@@ -1,7 +1,9 @@
 package com.example.scalerfollowalong
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +30,19 @@ class MainActivity5 : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        val backbutton05 = findViewById<ImageButton>(R.id.ibtnBack05)
+        val nextbutton05 = findViewById<ImageButton>(R.id.ibtnNext05)
+
+        backbutton05.setOnClickListener {
+            finish()
+        }
+
+        nextbutton05.setOnClickListener {
+            Intent(this, MainActivity6::class.java).also {
+                startActivity(it)
+            }
         }
 
         myRecyclerView = findViewById(R.id.recyclerView)

@@ -62,7 +62,7 @@
             android:fontFamily="@font/audiowide"
             android:text="@string/tVQuestionAboutFoodPreferences"
             android:textColor="@color/white"
-            android:textSize="23sp"
+            android:textSize="21sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -85,7 +85,7 @@
                 android:fontFamily="@font/audiowide"
                 android:text="@string/rBVegan"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
             <RadioButton
                 android:id="@+id/rBVegetarian"
@@ -94,7 +94,7 @@
                 android:fontFamily="@font/audiowide"
                 android:text="@string/rBVegetarian"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
             <RadioButton
                 android:id="@+id/rBNonVegetarian"
@@ -103,7 +103,7 @@
                 android:fontFamily="@font/audiowide"
                 android:text="@string/rBNonVegetarian"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
         </RadioGroup>
 
@@ -181,6 +181,29 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnSubmitMyFoodPreferences" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/ibtnBack07"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="20dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/rewind"
+            app:tint="@color/white" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

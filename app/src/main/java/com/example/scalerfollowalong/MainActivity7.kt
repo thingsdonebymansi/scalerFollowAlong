@@ -49,6 +49,10 @@ class MainActivity7 : AppCompatActivity() {
 
         }
 
+        binding.ibtnBack07.setOnClickListener{
+            finish()
+        }
+
 
 
     }
