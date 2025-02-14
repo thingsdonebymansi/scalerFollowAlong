@@ -5,12 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <EditText
             android:id="@+id/ptFirstNumber"
@@ -19,9 +21,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="92dp"
             android:fontFamily="@font/slackey"
-            android:inputType="number"
             android:hint="@string/ptFirstNumberHint"
-            android:textSize="18sp"
+            android:inputType="number"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,9 +34,9 @@
             android:layout_marginTop="92dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/slackey"
-            android:inputType="number"
             android:hint="@string/ptSecondNumberHint"
-            android:textSize="18sp"
+            android:inputType="number"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,8 +60,8 @@
             android:layout_marginEnd="72dp"
             android:layout_marginBottom="92dp"
             android:fontFamily="@font/slackey"
-            android:textSize="20sp"
             android:text="Result"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ptSecondNumber" />
@@ -97,4 +99,23 @@
         android:fontFamily="@font/audiowide"
         android:text="Hot"
         android:textSize="20sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <ImageButton
+            android:id="@+id/ibtnNext00"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:src="@drawable/arrow_1_"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </LinearLayout>

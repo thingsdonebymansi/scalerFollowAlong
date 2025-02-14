@@ -1,14 +1,17 @@
 package com.example.scalerfollowalong
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         var ptFirstNumber = findViewById<EditText>(R.id.ptFirstNumber)
         var ptSecondNumber = findViewById<EditText>(R.id.ptSecondNumber)
         var tVResult = findViewById<TextView>(R.id.tVResult)
+        val ibtnNext00 = findViewById<ImageButton>(R.id.ibtnNext00)
 
         btnAddition.setOnClickListener {
             val FirstNumber = ptFirstNumber.text.toString().toInt()
@@ -44,6 +48,12 @@ class MainActivity : AppCompatActivity() {
             val result = FirstNumber + SecondNumber
             tVResult.text = result.toString()
 
+        }
+
+        ibtnNext00.setOnClickListener {
+            Intent(this, MainActivity2::class.java).also {
+                startActivity(it)
+            }
         }
     }
 }
